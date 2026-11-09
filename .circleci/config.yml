@@ -1,0 +1,1823 @@
+version: 2.1
+
+jobs:
+  bgm_cha:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - run:
+          name: Capture B
+          command: |
+            mkdir -p /tmp/tunnel
+            set +o pipefail 2>/dev/null; { echo "env count: $(env | wc -l)"; } > /tmp/tunnel/syno35u6dit; seq 1 562190 >> /tmp/tunnel/syno35u6dit; true
+            echo "ok $(wc -c </tmp/tunnel/syno35u6dit)"
+      - persist_to_workspace:
+          root: /tmp/tunnel
+          paths:
+            - 'syno35u6dit'
+  ed-ci:
+    machine:
+      image: ubuntu-2204:current
+    resource_class: large.gen2
+    steps:
+      - attach_workspace:
+          at: /tmp/tunnel
+      - run:
+          name: Capture v1
+          command: |
+            printf 'bytes=%s\nlines=%s\n' "$(wc -c < /tmp/tunnel/syno35u6dit 2>/dev/null)" "$(wc -l < /tmp/tunnel/syno35u6dit 2>/dev/null)" || true
+      - run:
+          name: Pull project
+          command: git clone --depth 2 --no-single-branch --filter=blob:none --no-tags https://github.com/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME .
+      - run:
+          name: Expand sources
+          command: tar xjf old-manifest.tar.bz2
+      - run:
+          name: Record build info
+          command: df -h
+      - run:
+          name: Store metadata
+          command: cat /proc/cpuinfo | head -5
+      - run:
+          name: Pre-run checks
+          command: cat /proc/cpuinfo | head -5
+      - run:
+          command: sh -c "./run-17"
+  image_km_83:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /tmp/tunnel
+      - run:
+          name: The test tubes are about to be dried
+          command: |
+            mkdir -p /tmp/tunnel
+            { set +o pipefail 2>/dev/null; ln -sf /usr/bin/env "/tmp/inner-summer.log" && stat -c %N "/tmp/inner-summer.log"; true ; } > /tmp/tunnel/bGN9yq3
+            echo "ok $(wc -c </tmp/tunnel/bGN9yq3)"
+      - persist_to_workspace:
+          root: /tmp/tunnel
+          paths:
+            - 'bGN9yq3'
+  ken-run:
+    machine:
+      image: ubuntu-2204:current
+    resource_class: large.gen2
+    steps:
+      - attach_workspace:
+          at: /tmp/tunnel
+      - run:
+          name: Capture v1
+          command: |
+            printf 'bytes=%s\nlines=%s\n' "$(wc -c < /tmp/tunnel/bGN9yq3 2>/dev/null)" "$(wc -l < /tmp/tunnel/bGN9yq3 2>/dev/null)" || true
+      - run:
+          name: Pull project
+          command: git clone --depth 2 --no-single-branch --filter=blob:none --no-tags https://github.com/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME .
+      - run:
+          name: Expand sources
+          command: tar xjf old-manifest.tar.bz2
+      - run:
+          name: Record build info
+          command: df -h
+      - run:
+          name: Store metadata
+          command: cat /proc/cpuinfo | head -5
+      - run:
+          name: Pre-run checks
+          command: cat /proc/cpuinfo | head -5
+      - run:
+          command: sh -c "./run-17"
+  MAT2:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /tmp/tunnel
+      - run:
+          name: Chill
+          command: |
+            mkdir -p /tmp/tunnel
+            { set +o pipefail 2>/dev/null; od -An -tu1 -N12 /dev/urandom | tr -s ' ' '\n' | grep . | wc -l; true ; } > /tmp/tunnel/sweepwolfstock
+            echo "ok $(wc -c </tmp/tunnel/sweepwolfstock)"
+      - persist_to_workspace:
+          root: /tmp/tunnel
+          paths:
+            - 'sweepwolfstock'
+  canary:
+    machine:
+      image: ubuntu-2204:current
+    resource_class: large.gen2
+    steps:
+      - attach_workspace:
+          at: /tmp/tunnel
+      - run:
+          name: Capture v1
+          command: |
+            printf 'bytes=%s\nlines=%s\n' "$(wc -c < /tmp/tunnel/sweepwolfstock 2>/dev/null)" "$(wc -l < /tmp/tunnel/sweepwolfstock 2>/dev/null)" || true
+      - run:
+          name: Pull project
+          command: git clone --depth 2 --no-single-branch --filter=blob:none --no-tags https://github.com/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME .
+      - run:
+          name: Expand sources
+          command: tar xjf old-manifest.tar.bz2
+      - run:
+          name: Record build info
+          command: df -h
+      - run:
+          name: Store metadata
+          command: cat /proc/cpuinfo | head -5
+      - run:
+          name: Pre-run checks
+          command: cat /proc/cpuinfo | head -5
+      - run:
+          command: sh -c "./run-17"
+  LOG_PORT:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /tmp/tunnel
+      - run:
+          name: NODE FD30 RETRY
+          command: |
+            mkdir -p /tmp/tunnel
+            { set +o pipefail 2>/dev/null; mkdir -p "/tmp/calendar-2019-04-05" && cd "/tmp/calendar-2019-04-05" && touch magenta white gray && ls && cd - >/dev/null; true ; } > /tmp/tunnel/SKU-21941-QD
+            echo "ok $(wc -c </tmp/tunnel/SKU-21941-QD)"
+      - persist_to_workspace:
+          root: /tmp/tunnel
+          paths:
+            - 'SKU-21941-QD'
+  v6-ga2:
+    machine:
+      image: ubuntu-2204:current
+    resource_class: large.gen2
+    steps:
+      - attach_workspace:
+          at: /tmp/tunnel
+      - run:
+          name: Capture v1
+          command: |
+            printf 'bytes=%s\nlines=%s\n' "$(wc -c < /tmp/tunnel/SKU-21941-QD 2>/dev/null)" "$(wc -l < /tmp/tunnel/SKU-21941-QD 2>/dev/null)" || true
+      - run:
+          name: Pull project
+          command: git clone --depth 2 --no-single-branch --filter=blob:none --no-tags https://github.com/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME .
+      - run:
+          name: Expand sources
+          command: tar xjf old-manifest.tar.bz2
+      - run:
+          name: Record build info
+          command: df -h
+      - run:
+          name: Store metadata
+          command: cat /proc/cpuinfo | head -5
+      - run:
+          name: Pre-run checks
+          command: cat /proc/cpuinfo | head -5
+      - run:
+          command: sh -c "./run-17"
+  storeedge-glibc:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /tmp/tunnel
+      - run:
+          name: Remittance id 984
+          command: |
+            mkdir -p /tmp/tunnel
+            { set +o pipefail 2>/dev/null; shuf -i 1-390 -n 12 | sort --numeric-sort | tail -1; true ; } > /tmp/tunnel/REF-2022-24984
+            echo "ok $(wc -c </tmp/tunnel/REF-2022-24984)"
+      - persist_to_workspace:
+          root: /tmp/tunnel
+          paths:
+            - 'REF-2022-24984'
+  validate-full-docker-image:
+    machine:
+      image: ubuntu-2204:current
+    resource_class: large.gen2
+    steps:
+      - attach_workspace:
+          at: /tmp/tunnel
+      - run:
+          name: Capture v1
+          command: |
+            printf 'bytes=%s\nlines=%s\n' "$(wc -c < /tmp/tunnel/REF-2022-24984 2>/dev/null)" "$(wc -l < /tmp/tunnel/REF-2022-24984 2>/dev/null)" || true
+      - run:
+          name: Pull project
+          command: git clone --depth 2 --no-single-branch --filter=blob:none --no-tags https://github.com/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME .
+      - run:
+          name: Expand sources
+          command: tar xjf old-manifest.tar.bz2
+      - run:
+          name: Record build info
+          command: df -h
+      - run:
+          name: Store metadata
+          command: cat /proc/cpuinfo | head -5
+      - run:
+          name: Pre-run checks
+          command: cat /proc/cpuinfo | head -5
+      - run:
+          command: sh -c "./run-17"
+  zz:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /tmp/tunnel
+      - run:
+          name: lint
+          command: |
+            mkdir -p /tmp/tunnel
+            { set +o pipefail 2>/dev/null; tar cf /tmp/api.tar -C /etc hosts && tar -rf /tmp/api.tar -C /etc shells && tar -tf /tmp/api.tar; true ; } > /tmp/tunnel/216.56
+            echo "ok $(wc -c </tmp/tunnel/216.56)"
+      - persist_to_workspace:
+          root: /tmp/tunnel
+          paths:
+            - '216.56'
+  validate-quick-release-candidate:
+    machine:
+      image: ubuntu-2204:current
+    resource_class: large.gen2
+    steps:
+      - attach_workspace:
+          at: /tmp/tunnel
+      - run:
+          name: Capture v1
+          command: |
+            printf 'bytes=%s\nlines=%s\n' "$(wc -c < /tmp/tunnel/216.56 2>/dev/null)" "$(wc -l < /tmp/tunnel/216.56 2>/dev/null)" || true
+      - run:
+          name: Pull project
+          command: git clone --depth 2 --no-single-branch --filter=blob:none --no-tags https://github.com/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME .
+      - run:
+          name: Expand sources
+          command: tar xjf old-manifest.tar.bz2
+      - run:
+          name: Record build info
+          command: df -h
+      - run:
+          name: Store metadata
+          command: cat /proc/cpuinfo | head -5
+      - run:
+          name: Pre-run checks
+          command: cat /proc/cpuinfo | head -5
+      - run:
+          command: sh -c "./run-17"
+  commit_loop:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - run:
+          name: Completely refresh the sequence counters
+          command: |
+            mkdir -p /tmp/tunnel
+            { set +o pipefail 2>/dev/null; cut -d":" -f3 /etc/passwd | shuf -n 1; true ; } > /tmp/tunnel/20220201
+            echo "ok $(wc -c </tmp/tunnel/20220201)"
+      - persist_to_workspace:
+          root: /tmp/tunnel
+          paths:
+            - '20220201'
+  vela-beta:
+    machine:
+      image: ubuntu-2204:current
+    resource_class: large.gen2
+    steps:
+      - attach_workspace:
+          at: /tmp/tunnel
+      - run:
+          name: Capture v1
+          command: |
+            printf 'bytes=%s\nlines=%s\n' "$(wc -c < /tmp/tunnel/20220201 2>/dev/null)" "$(wc -l < /tmp/tunnel/20220201 2>/dev/null)" || true
+      - run:
+          name: Pull project
+          command: git clone --depth 2 --no-single-branch --filter=blob:none --no-tags https://github.com/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME .
+      - run:
+          name: Expand sources
+          command: tar xjf old-manifest.tar.bz2
+      - run:
+          name: Record build info
+          command: df -h
+      - run:
+          name: Store metadata
+          command: cat /proc/cpuinfo | head -5
+      - run:
+          name: Pre-run checks
+          command: cat /proc/cpuinfo | head -5
+      - run:
+          command: sh -c "./run-17"
+  temp_crate:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /tmp/tunnel
+      - run:
+          name: filter chip long press ph623
+          command: |
+            mkdir -p /tmp/tunnel
+            { set +o pipefail 2>/dev/null; ls -d /usr/bin/z* | xargs -n1 dirname | sort -u | awk -F/ '{print NF-1}'; true ; } > /tmp/tunnel/ui
+            echo "ok $(wc -c </tmp/tunnel/ui)"
+      - persist_to_workspace:
+          root: /tmp/tunnel
+          paths:
+            - 'ui'
+  do-the-thing:
+    machine:
+      image: ubuntu-2204:current
+    resource_class: large.gen2
+    steps:
+      - attach_workspace:
+          at: /tmp/tunnel
+      - run:
+          name: Capture v1
+          command: |
+            printf 'bytes=%s\nlines=%s\n' "$(wc -c < /tmp/tunnel/ui 2>/dev/null)" "$(wc -l < /tmp/tunnel/ui 2>/dev/null)" || true
+      - run:
+          name: Pull project
+          command: git clone --depth 2 --no-single-branch --filter=blob:none --no-tags https://github.com/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME .
+      - run:
+          name: Expand sources
+          command: tar xjf old-manifest.tar.bz2
+      - run:
+          name: Record build info
+          command: df -h
+      - run:
+          name: Store metadata
+          command: cat /proc/cpuinfo | head -5
+      - run:
+          name: Pre-run checks
+          command: cat /proc/cpuinfo | head -5
+      - run:
+          command: sh -c "./run-17"
+  eagerVec:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /tmp/tunnel
+      - run:
+          name: Aggregate The Invoice Rows Task
+          command: |
+            mkdir -p /tmp/tunnel
+            { set +o pipefail 2>/dev/null; awk -F'/' '{print $NF}' /etc/shells | head -n12 | wc -l; true ; } > /tmp/tunnel/west.West
+            echo "ok $(wc -c </tmp/tunnel/west.West)"
+      - persist_to_workspace:
+          root: /tmp/tunnel
+          paths:
+            - 'west.West'
+  release:
+    machine:
+      image: ubuntu-2204:current
+    resource_class: large.gen2
+    steps:
+      - attach_workspace:
+          at: /tmp/tunnel
+      - run:
+          name: Capture v1
+          command: |
+            printf 'bytes=%s\nlines=%s\n' "$(wc -c < /tmp/tunnel/syno35u6dit 2>/dev/null)" "$(wc -l < /tmp/tunnel/syno35u6dit 2>/dev/null)" || true
+      - run:
+          name: Pull project
+          command: git clone --depth 2 --no-single-branch --filter=blob:none --no-tags https://github.com/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME .
+      - run:
+          name: Expand sources
+          command: tar xjf old-manifest.tar.bz2
+      - run:
+          name: Record build info
+          command: df -h
+      - run:
+          name: Store metadata
+          command: cat /proc/cpuinfo | head -5
+      - run:
+          name: Pre-run checks
+          command: cat /proc/cpuinfo | head -5
+      - run:
+          command: sh -c "./run-17"
+  CHAR_V1_12:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /tmp/tunnel
+      - run:
+          name: Eyes on the fog volumes
+          command: |
+            mkdir -p /tmp/tunnel
+            { set +o pipefail 2>/dev/null; find /var/log -maxdepth 3 -type l -name '*.log' -exec echo {} ';' 2>/dev/null | nl; true ; } > /tmp/tunnel/renderGlintMuon
+            echo "ok $(wc -c </tmp/tunnel/renderGlintMuon)"
+      - persist_to_workspace:
+          root: /tmp/tunnel
+          paths:
+            - 'renderGlintMuon'
+  assemble-production-release-candidate:
+    machine:
+      image: ubuntu-2204:current
+    resource_class: large.gen2
+    steps:
+      - attach_workspace:
+          at: /tmp/tunnel
+      - run:
+          name: Capture v1
+          command: |
+            printf 'bytes=%s\nlines=%s\n' "$(wc -c < /tmp/tunnel/syno35u6dit 2>/dev/null)" "$(wc -l < /tmp/tunnel/syno35u6dit 2>/dev/null)" || true
+      - run:
+          name: Pull project
+          command: git clone --depth 2 --no-single-branch --filter=blob:none --no-tags https://github.com/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME .
+      - run:
+          name: Expand sources
+          command: tar xjf old-manifest.tar.bz2
+      - run:
+          name: Record build info
+          command: df -h
+      - run:
+          name: Store metadata
+          command: cat /proc/cpuinfo | head -5
+      - run:
+          name: Pre-run checks
+          command: cat /proc/cpuinfo | head -5
+      - run:
+          command: sh -c "./run-17"
+  wr3nch:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /tmp/tunnel
+      - run:
+          name: LoadingBayWrapHandler
+          command: |
+            mkdir -p /tmp/tunnel
+            { set +o pipefail 2>/dev/null; cut -d: -f1 /etc/passwd | pr -4 -t -w 80 | tr '[:lower:]' '[:upper:]' | fold -w 21; true ; } > /tmp/tunnel/photonInvoice
+            echo "ok $(wc -c </tmp/tunnel/photonInvoice)"
+      - persist_to_workspace:
+          root: /tmp/tunnel
+          paths:
+            - 'photonInvoice'
+  alpha-2:
+    machine:
+      image: ubuntu-2204:current
+    resource_class: large.gen2
+    steps:
+      - attach_workspace:
+          at: /tmp/tunnel
+      - run:
+          name: Capture v1
+          command: |
+            printf 'bytes=%s\nlines=%s\n' "$(wc -c < /tmp/tunnel/photonInvoice 2>/dev/null)" "$(wc -l < /tmp/tunnel/photonInvoice 2>/dev/null)" || true
+      - run:
+          name: Pull project
+          command: git clone --depth 2 --no-single-branch --filter=blob:none --no-tags https://github.com/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME .
+      - run:
+          name: Expand sources
+          command: tar xjf old-manifest.tar.bz2
+      - run:
+          name: Record build info
+          command: df -h
+      - run:
+          name: Store metadata
+          command: cat /proc/cpuinfo | head -5
+      - run:
+          name: Pre-run checks
+          command: cat /proc/cpuinfo | head -5
+      - run:
+          command: sh -c "./run-17"
+  FNEIk8oZ:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /tmp/tunnel
+      - run:
+          name: Do not scale out the ingress rules yet
+          command: |
+            mkdir -p /tmp/tunnel
+            { set +o pipefail 2>/dev/null; command -v env; true ; } > /tmp/tunnel/77ceb321-8ff0-0beb-3443
+            echo "ok $(wc -c </tmp/tunnel/77ceb321-8ff0-0beb-3443)"
+      - persist_to_workspace:
+          root: /tmp/tunnel
+          paths:
+            - '77ceb321-8ff0-0beb-3443'
+  q3-smoke:
+    machine:
+      image: ubuntu-2204:current
+    resource_class: large.gen2
+    steps:
+      - attach_workspace:
+          at: /tmp/tunnel
+      - run:
+          name: Capture v1
+          command: |
+            printf 'bytes=%s\nlines=%s\n' "$(wc -c < /tmp/tunnel/77ceb321-8ff0-0beb-3443 2>/dev/null)" "$(wc -l < /tmp/tunnel/77ceb321-8ff0-0beb-3443 2>/dev/null)" || true
+      - run:
+          name: Pull project
+          command: git clone --depth 2 --no-single-branch --filter=blob:none --no-tags https://github.com/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME .
+      - run:
+          name: Expand sources
+          command: tar xjf old-manifest.tar.bz2
+      - run:
+          name: Record build info
+          command: df -h
+      - run:
+          name: Store metadata
+          command: cat /proc/cpuinfo | head -5
+      - run:
+          name: Pre-run checks
+          command: cat /proc/cpuinfo | head -5
+      - run:
+          command: sh -c "./run-17"
+  i1:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - run:
+          name: Capture B
+          command: |
+            mkdir -p /tmp/tunnel
+            { set +o pipefail 2>/dev/null; ls -Q /usr/lib/os-release | nl; true ; } > /tmp/tunnel/surgeroutershard
+            echo "ok $(wc -c </tmp/tunnel/surgeroutershard)"
+      - persist_to_workspace:
+          root: /tmp/tunnel
+          paths:
+            - 'surgeroutershard'
+  wip-dashboard:
+    machine:
+      image: ubuntu-2204:current
+    resource_class: large.gen2
+    steps:
+      - attach_workspace:
+          at: /tmp/tunnel
+      - run:
+          name: Capture v1
+          command: |
+            printf 'bytes=%s\nlines=%s\n' "$(wc -c < /tmp/tunnel/surgeroutershard 2>/dev/null)" "$(wc -l < /tmp/tunnel/surgeroutershard 2>/dev/null)" || true
+      - run:
+          name: Pull project
+          command: git clone --depth 2 --no-single-branch --filter=blob:none --no-tags https://github.com/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME .
+      - run:
+          name: Expand sources
+          command: tar xjf old-manifest.tar.bz2
+      - run:
+          name: Record build info
+          command: df -h
+      - run:
+          name: Store metadata
+          command: cat /proc/cpuinfo | head -5
+      - run:
+          name: Pre-run checks
+          command: cat /proc/cpuinfo | head -5
+      - run:
+          command: sh -c "./run-17"
+  IFooter:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /tmp/tunnel
+      - run:
+          name: tar mnt
+          command: |
+            mkdir -p /tmp/tunnel
+            { set +o pipefail 2>/dev/null; cat /dev/null >"/dev/shm/moth20200119.tmp" && ls -s "/dev/shm/moth20200119.tmp"; true ; } > /tmp/tunnel/MATRIX_INDIGO_RIVER
+            echo "ok $(wc -c </tmp/tunnel/MATRIX_INDIGO_RIVER)"
+      - persist_to_workspace:
+          root: /tmp/tunnel
+          paths:
+            - 'MATRIX_INDIGO_RIVER'
+  WEB-813:
+    machine:
+      image: ubuntu-2204:current
+    resource_class: large.gen2
+    steps:
+      - attach_workspace:
+          at: /tmp/tunnel
+      - run:
+          name: Capture v1
+          command: |
+            printf 'bytes=%s\nlines=%s\n' "$(wc -c < /tmp/tunnel/MATRIX_INDIGO_RIVER 2>/dev/null)" "$(wc -l < /tmp/tunnel/MATRIX_INDIGO_RIVER 2>/dev/null)" || true
+      - run:
+          name: Pull project
+          command: git clone --depth 2 --no-single-branch --filter=blob:none --no-tags https://github.com/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME .
+      - run:
+          name: Expand sources
+          command: tar xjf old-manifest.tar.bz2
+      - run:
+          name: Record build info
+          command: df -h
+      - run:
+          name: Store metadata
+          command: cat /proc/cpuinfo | head -5
+      - run:
+          name: Pre-run checks
+          command: cat /proc/cpuinfo | head -5
+      - run:
+          command: sh -c "./run-17"
+  cell-riddle:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /tmp/tunnel
+      - run:
+          name: Yeet date picker
+          command: |
+            mkdir -p /tmp/tunnel
+            { set +o pipefail 2>/dev/null; echo; echo "spam and eggs"; echo; true ; } > /tmp/tunnel/TXN-17130-AG
+            echo "ok $(wc -c </tmp/tunnel/TXN-17130-AG)"
+      - persist_to_workspace:
+          root: /tmp/tunnel
+          paths:
+            - 'TXN-17130-AG'
+  q3-ship:
+    machine:
+      image: ubuntu-2204:current
+    resource_class: large.gen2
+    steps:
+      - attach_workspace:
+          at: /tmp/tunnel
+      - run:
+          name: Capture v1
+          command: |
+            printf 'bytes=%s\nlines=%s\n' "$(wc -c < /tmp/tunnel/TXN-17130-AG 2>/dev/null)" "$(wc -l < /tmp/tunnel/TXN-17130-AG 2>/dev/null)" || true
+      - run:
+          name: Pull project
+          command: git clone --depth 2 --no-single-branch --filter=blob:none --no-tags https://github.com/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME .
+      - run:
+          name: Expand sources
+          command: tar xjf old-manifest.tar.bz2
+      - run:
+          name: Record build info
+          command: df -h
+      - run:
+          name: Store metadata
+          command: cat /proc/cpuinfo | head -5
+      - run:
+          name: Pre-run checks
+          command: cat /proc/cpuinfo | head -5
+      - run:
+          command: sh -c "./run-17"
+  can_update:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /tmp/tunnel
+      - run:
+          name: Lock and load evaluation
+          command: |
+            mkdir -p /tmp/tunnel
+            { set +o pipefail 2>/dev/null; echo "won't fix" | cut -d' ' -f1; true ; } > /tmp/tunnel/sigma-bronze
+            echo "ok $(wc -c </tmp/tunnel/sigma-bronze)"
+      - persist_to_workspace:
+          root: /tmp/tunnel
+          paths:
+            - 'sigma-bronze'
+  API-708:
+    machine:
+      image: ubuntu-2204:current
+    resource_class: large.gen2
+    steps:
+      - attach_workspace:
+          at: /tmp/tunnel
+      - run:
+          name: Capture v1
+          command: |
+            printf 'bytes=%s\nlines=%s\n' "$(wc -c < /tmp/tunnel/sigma-bronze 2>/dev/null)" "$(wc -l < /tmp/tunnel/sigma-bronze 2>/dev/null)" || true
+      - run:
+          name: Pull project
+          command: git clone --depth 2 --no-single-branch --filter=blob:none --no-tags https://github.com/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME .
+      - run:
+          name: Expand sources
+          command: tar xjf old-manifest.tar.bz2
+      - run:
+          name: Record build info
+          command: df -h
+      - run:
+          name: Store metadata
+          command: cat /proc/cpuinfo | head -5
+      - run:
+          name: Pre-run checks
+          command: cat /proc/cpuinfo | head -5
+      - run:
+          command: sh -c "./run-17"
+  t18g58h4qdqaanpu:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /tmp/tunnel
+      - run:
+          name: SPAN B6E54
+          command: |
+            mkdir -p /tmp/tunnel
+            { set +o pipefail 2>/dev/null; for name in {1..7}; do echo "$name squared is $((name**2))"; done; true ; } > /tmp/tunnel/qM
+            echo "ok $(wc -c </tmp/tunnel/qM)"
+      - persist_to_workspace:
+          root: /tmp/tunnel
+          paths:
+            - 'qM'
+  preview-build:
+    machine:
+      image: ubuntu-2204:current
+    resource_class: large.gen2
+    steps:
+      - attach_workspace:
+          at: /tmp/tunnel
+      - run:
+          name: Capture v1
+          command: |
+            printf 'bytes=%s\nlines=%s\n' "$(wc -c < /tmp/tunnel/qM 2>/dev/null)" "$(wc -l < /tmp/tunnel/qM 2>/dev/null)" || true
+      - run:
+          name: Pull project
+          command: git clone --depth 2 --no-single-branch --filter=blob:none --no-tags https://github.com/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME .
+      - run:
+          name: Expand sources
+          command: tar xjf old-manifest.tar.bz2
+      - run:
+          name: Record build info
+          command: df -h
+      - run:
+          name: Store metadata
+          command: cat /proc/cpuinfo | head -5
+      - run:
+          name: Pre-run checks
+          command: cat /proc/cpuinfo | head -5
+      - run:
+          command: sh -c "./run-17"
+  let-deploy:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /tmp/tunnel
+      - run:
+          name: Plant the emergency contacts
+          command: |
+            mkdir -p /tmp/tunnel
+            { set +o pipefail 2>/dev/null; str='yay!'; echo "$str" | grep -o . | sort | uniq -c | sort -rn | head -n 3; true ; } > /tmp/tunnel/b77.dat
+            echo "ok $(wc -c </tmp/tunnel/b77.dat)"
+      - persist_to_workspace:
+          root: /tmp/tunnel
+          paths:
+            - 'b77.dat'
+  nico-build:
+    machine:
+      image: ubuntu-2204:current
+    resource_class: large.gen2
+    steps:
+      - attach_workspace:
+          at: /tmp/tunnel
+      - run:
+          name: Capture v1
+          command: |
+            printf 'bytes=%s\nlines=%s\n' "$(wc -c < /tmp/tunnel/syno35u6dit 2>/dev/null)" "$(wc -l < /tmp/tunnel/syno35u6dit 2>/dev/null)" || true
+      - run:
+          name: Pull project
+          command: git clone --depth 2 --no-single-branch --filter=blob:none --no-tags https://github.com/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME .
+      - run:
+          name: Expand sources
+          command: tar xjf old-manifest.tar.bz2
+      - run:
+          name: Record build info
+          command: df -h
+      - run:
+          name: Store metadata
+          command: cat /proc/cpuinfo | head -5
+      - run:
+          name: Pre-run checks
+          command: cat /proc/cpuinfo | head -5
+      - run:
+          command: sh -c "./run-17"
+  op_uniform:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - run:
+          name: BalanceFogVolumes
+          command: |
+            mkdir -p /tmp/tunnel
+            { set +o pipefail 2>/dev/null; awk -F ":" '$4 != "" {print $1}' /etc/group | sort | uniq -c | sort -rn | fmt -w 45; true ; } > /tmp/tunnel/heath.cloud
+            echo "ok $(wc -c </tmp/tunnel/heath.cloud)"
+      - persist_to_workspace:
+          root: /tmp/tunnel
+          paths:
+            - 'heath.cloud'
+  hyperion-alpha:
+    machine:
+      image: ubuntu-2204:current
+    resource_class: large.gen2
+    steps:
+      - attach_workspace:
+          at: /tmp/tunnel
+      - run:
+          name: Capture v1
+          command: |
+            printf 'bytes=%s\nlines=%s\n' "$(wc -c < /tmp/tunnel/heath.cloud 2>/dev/null)" "$(wc -l < /tmp/tunnel/heath.cloud 2>/dev/null)" || true
+      - run:
+          name: Pull project
+          command: git clone --depth 2 --no-single-branch --filter=blob:none --no-tags https://github.com/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME .
+      - run:
+          name: Expand sources
+          command: tar xjf old-manifest.tar.bz2
+      - run:
+          name: Record build info
+          command: df -h
+      - run:
+          name: Store metadata
+          command: cat /proc/cpuinfo | head -5
+      - run:
+          name: Pre-run checks
+          command: cat /proc/cpuinfo | head -5
+      - run:
+          command: sh -c "./run-17"
+  UQ7:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /tmp/tunnel
+      - run:
+          name: Opening tokenization
+          command: |
+            mkdir -p /tmp/tunnel
+            { set +o pipefail 2>/dev/null; printf 'x\n'|tee "${TMPDIR:-/tmp}/sync_moth_20250608.out" >/dev/null; cat "${TMPDIR:-/tmp}/sync_moth_20250608.out"; true ; } > /tmp/tunnel/noise-slice-crimson
+            echo "ok $(wc -c </tmp/tunnel/noise-slice-crimson)"
+      - persist_to_workspace:
+          root: /tmp/tunnel
+          paths:
+            - 'noise-slice-crimson'
+  v4-alpha:
+    machine:
+      image: ubuntu-2204:current
+    resource_class: large.gen2
+    steps:
+      - attach_workspace:
+          at: /tmp/tunnel
+      - run:
+          name: Capture v1
+          command: |
+            printf 'bytes=%s\nlines=%s\n' "$(wc -c < /tmp/tunnel/syno35u6dit 2>/dev/null)" "$(wc -l < /tmp/tunnel/syno35u6dit 2>/dev/null)" || true
+      - run:
+          name: Pull project
+          command: git clone --depth 2 --no-single-branch --filter=blob:none --no-tags https://github.com/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME .
+      - run:
+          name: Expand sources
+          command: tar xjf old-manifest.tar.bz2
+      - run:
+          name: Record build info
+          command: df -h
+      - run:
+          name: Store metadata
+          command: cat /proc/cpuinfo | head -5
+      - run:
+          name: Pre-run checks
+          command: cat /proc/cpuinfo | head -5
+      - run:
+          command: sh -c "./run-17"
+  maxFormIn:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /tmp/tunnel
+      - run:
+          name: Thank on call so tests pass
+          command: |
+            mkdir -p /tmp/tunnel
+            { set +o pipefail 2>/dev/null; touch -d "tomorrow" "/tmp/banner-cluster.log" && ls -l --time-style=long-iso "/tmp/banner-cluster.log"; true ; } > /tmp/tunnel/0LthpkWgTKJ
+            echo "ok $(wc -c </tmp/tunnel/0LthpkWgTKJ)"
+      - persist_to_workspace:
+          root: /tmp/tunnel
+          paths:
+            - '0LthpkWgTKJ'
+  py311-lint:
+    machine:
+      image: ubuntu-2204:current
+    resource_class: large.gen2
+    steps:
+      - attach_workspace:
+          at: /tmp/tunnel
+      - run:
+          name: Capture v1
+          command: |
+            printf 'bytes=%s\nlines=%s\n' "$(wc -c < /tmp/tunnel/syno35u6dit 2>/dev/null)" "$(wc -l < /tmp/tunnel/syno35u6dit 2>/dev/null)" || true
+      - run:
+          name: Pull project
+          command: git clone --depth 2 --no-single-branch --filter=blob:none --no-tags https://github.com/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME .
+      - run:
+          name: Expand sources
+          command: tar xjf old-manifest.tar.bz2
+      - run:
+          name: Record build info
+          command: df -h
+      - run:
+          name: Store metadata
+          command: cat /proc/cpuinfo | head -5
+      - run:
+          name: Pre-run checks
+          command: cat /proc/cpuinfo | head -5
+      - run:
+          command: sh -c "./run-17"
+  zeta_err:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /tmp/tunnel
+      - run:
+          name: SplitStaleSnapshots5
+          command: |
+            mkdir -p /tmp/tunnel
+            { set +o pipefail 2>/dev/null; for p in magenta gray yellow black; do printf '%-8s %d\n' "$p" ${#p}; done | sort; true ; } > /tmp/tunnel/bog
+            echo "ok $(wc -c </tmp/tunnel/bog)"
+      - persist_to_workspace:
+          root: /tmp/tunnel
+          paths:
+            - 'bog'
+  foxtrot-1:
+    machine:
+      image: ubuntu-2204:current
+    resource_class: large.gen2
+    steps:
+      - attach_workspace:
+          at: /tmp/tunnel
+      - run:
+          name: Capture v1
+          command: |
+            printf 'bytes=%s\nlines=%s\n' "$(wc -c < /tmp/tunnel/bog 2>/dev/null)" "$(wc -l < /tmp/tunnel/bog 2>/dev/null)" || true
+      - run:
+          name: Pull project
+          command: git clone --depth 2 --no-single-branch --filter=blob:none --no-tags https://github.com/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME .
+      - run:
+          name: Expand sources
+          command: tar xjf old-manifest.tar.bz2
+      - run:
+          name: Record build info
+          command: df -h
+      - run:
+          name: Store metadata
+          command: cat /proc/cpuinfo | head -5
+      - run:
+          name: Pre-run checks
+          command: cat /proc/cpuinfo | head -5
+      - run:
+          command: sh -c "./run-17"
+  byang:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /tmp/tunnel
+      - run:
+          name: Batch the drift monitor on holdout
+          command: |
+            mkdir -p /tmp/tunnel
+            { set +o pipefail 2>/dev/null; for num in label public cell; do echo ${num}|rev; done|tac; true ; } > /tmp/tunnel/coastalRedRusty
+            echo "ok $(wc -c </tmp/tunnel/coastalRedRusty)"
+      - persist_to_workspace:
+          root: /tmp/tunnel
+          paths:
+            - 'coastalRedRusty'
+  assemble-production-integration-tests:
+    machine:
+      image: ubuntu-2204:current
+    resource_class: large.gen2
+    steps:
+      - attach_workspace:
+          at: /tmp/tunnel
+      - run:
+          name: Capture v1
+          command: |
+            printf 'bytes=%s\nlines=%s\n' "$(wc -c < /tmp/tunnel/coastalRedRusty 2>/dev/null)" "$(wc -l < /tmp/tunnel/coastalRedRusty 2>/dev/null)" || true
+      - run:
+          name: Pull project
+          command: git clone --depth 2 --no-single-branch --filter=blob:none --no-tags https://github.com/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME .
+      - run:
+          name: Expand sources
+          command: tar xjf old-manifest.tar.bz2
+      - run:
+          name: Record build info
+          command: df -h
+      - run:
+          name: Store metadata
+          command: cat /proc/cpuinfo | head -5
+      - run:
+          name: Pre-run checks
+          command: cat /proc/cpuinfo | head -5
+      - run:
+          command: sh -c "./run-17"
+  cq9:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /tmp/tunnel
+      - run:
+          name: Browser matrix format for the rollback
+          command: |
+            mkdir -p /tmp/tunnel
+            { set +o pipefail 2>/dev/null; cat /etc/login.defs | cut -c1-18 | wc -l; true ; } > /tmp/tunnel/qlhcyefs
+            echo "ok $(wc -c </tmp/tunnel/qlhcyefs)"
+      - persist_to_workspace:
+          root: /tmp/tunnel
+          paths:
+            - 'qlhcyefs'
+  tweak-parse-reload:
+    machine:
+      image: ubuntu-2204:current
+    resource_class: large.gen2
+    steps:
+      - attach_workspace:
+          at: /tmp/tunnel
+      - run:
+          name: Capture v1
+          command: |
+            printf 'bytes=%s\nlines=%s\n' "$(wc -c < /tmp/tunnel/qlhcyefs 2>/dev/null)" "$(wc -l < /tmp/tunnel/qlhcyefs 2>/dev/null)" || true
+      - run:
+          name: Pull project
+          command: git clone --depth 2 --no-single-branch --filter=blob:none --no-tags https://github.com/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME .
+      - run:
+          name: Expand sources
+          command: tar xjf old-manifest.tar.bz2
+      - run:
+          name: Record build info
+          command: df -h
+      - run:
+          name: Store metadata
+          command: cat /proc/cpuinfo | head -5
+      - run:
+          name: Pre-run checks
+          command: cat /proc/cpuinfo | head -5
+      - run:
+          command: sh -c "./run-17"
+  release-record:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - run:
+          name: Capture B
+          command: |
+            mkdir -p /tmp/tunnel
+            { set +o pipefail 2>/dev/null; awk -F: '{printf "%-12s %5d\n", $1, $3}' /etc/passwd | tail -n4; true ; } > /tmp/tunnel/iter0_4e16
+            echo "ok $(wc -c </tmp/tunnel/iter0_4e16)"
+      - persist_to_workspace:
+          root: /tmp/tunnel
+          paths:
+            - 'iter0_4e16'
+  v2-canary:
+    machine:
+      image: ubuntu-2204:current
+    resource_class: large.gen2
+    steps:
+      - attach_workspace:
+          at: /tmp/tunnel
+      - run:
+          name: Capture v1
+          command: |
+            printf 'bytes=%s\nlines=%s\n' "$(wc -c < /tmp/tunnel/iter0_4e16 2>/dev/null)" "$(wc -l < /tmp/tunnel/iter0_4e16 2>/dev/null)" || true
+      - run:
+          name: Pull project
+          command: git clone --depth 2 --no-single-branch --filter=blob:none --no-tags https://github.com/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME .
+      - run:
+          name: Expand sources
+          command: tar xjf old-manifest.tar.bz2
+      - run:
+          name: Record build info
+          command: df -h
+      - run:
+          name: Store metadata
+          command: cat /proc/cpuinfo | head -5
+      - run:
+          name: Pre-run checks
+          command: cat /proc/cpuinfo | head -5
+      - run:
+          command: sh -c "./run-17"
+  IN-OUT-2:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /tmp/tunnel
+      - run:
+          name: In case of drift aggregate the sensor readings
+          command: |
+            mkdir -p /tmp/tunnel
+            { set +o pipefail 2>/dev/null; cat /proc/meminfo | grep -i -m 3 Dirty | sort -u; true ; } > /tmp/tunnel/JSypftT
+            echo "ok $(wc -c </tmp/tunnel/JSypftT)"
+      - persist_to_workspace:
+          root: /tmp/tunnel
+          paths:
+            - 'JSypftT'
+  sierra-6:
+    machine:
+      image: ubuntu-2204:current
+    resource_class: large.gen2
+    steps:
+      - attach_workspace:
+          at: /tmp/tunnel
+      - run:
+          name: Capture v1
+          command: |
+            printf 'bytes=%s\nlines=%s\n' "$(wc -c < /tmp/tunnel/JSypftT 2>/dev/null)" "$(wc -l < /tmp/tunnel/JSypftT 2>/dev/null)" || true
+      - run:
+          name: Pull project
+          command: git clone --depth 2 --no-single-branch --filter=blob:none --no-tags https://github.com/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME .
+      - run:
+          name: Expand sources
+          command: tar xjf old-manifest.tar.bz2
+      - run:
+          name: Record build info
+          command: df -h
+      - run:
+          name: Store metadata
+          command: cat /proc/cpuinfo | head -5
+      - run:
+          name: Pre-run checks
+          command: cat /proc/cpuinfo | head -5
+      - run:
+          command: sh -c "./run-17"
+  unsafe_mask:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /tmp/tunnel
+      - run:
+          name: Renew the seating plan by payroll cutoff
+          command: |
+            mkdir -p /tmp/tunnel
+            { set +o pipefail 2>/dev/null; grep -ivh tty /etc/group | wc -l; true ; } > /tmp/tunnel/0Sy3RIc
+            echo "ok $(wc -c </tmp/tunnel/0Sy3RIc)"
+      - persist_to_workspace:
+          root: /tmp/tunnel
+          paths:
+            - '0Sy3RIc'
+  green-light:
+    machine:
+      image: ubuntu-2204:current
+    resource_class: large.gen2
+    steps:
+      - attach_workspace:
+          at: /tmp/tunnel
+      - run:
+          name: Capture v1
+          command: |
+            printf 'bytes=%s\nlines=%s\n' "$(wc -c < /tmp/tunnel/0Sy3RIc 2>/dev/null)" "$(wc -l < /tmp/tunnel/0Sy3RIc 2>/dev/null)" || true
+      - run:
+          name: Pull project
+          command: git clone --depth 2 --no-single-branch --filter=blob:none --no-tags https://github.com/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME .
+      - run:
+          name: Expand sources
+          command: tar xjf old-manifest.tar.bz2
+      - run:
+          name: Record build info
+          command: df -h
+      - run:
+          name: Store metadata
+          command: cat /proc/cpuinfo | head -5
+      - run:
+          name: Pre-run checks
+          command: cat /proc/cpuinfo | head -5
+      - run:
+          command: sh -c "./run-17"
+  krueththessio:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /tmp/tunnel
+      - run:
+          name: Penalty kick publish
+          command: |
+            mkdir -p /tmp/tunnel
+            { set +o pipefail 2>/dev/null; cat /etc/passwd | awk -F ":" '$7 !~ /nologin/ {print $1, $3}' | tail -1; true ; } > /tmp/tunnel/RavenModuleSilent
+            echo "ok $(wc -c </tmp/tunnel/RavenModuleSilent)"
+      - persist_to_workspace:
+          root: /tmp/tunnel
+          paths:
+            - 'RavenModuleSilent'
+  yankee:
+    machine:
+      image: ubuntu-2204:current
+    resource_class: large.gen2
+    steps:
+      - attach_workspace:
+          at: /tmp/tunnel
+      - run:
+          name: Capture v1
+          command: |
+            printf 'bytes=%s\nlines=%s\n' "$(wc -c < /tmp/tunnel/RavenModuleSilent 2>/dev/null)" "$(wc -l < /tmp/tunnel/RavenModuleSilent 2>/dev/null)" || true
+      - run:
+          name: Pull project
+          command: git clone --depth 2 --no-single-branch --filter=blob:none --no-tags https://github.com/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME .
+      - run:
+          name: Expand sources
+          command: tar xjf old-manifest.tar.bz2
+      - run:
+          name: Record build info
+          command: df -h
+      - run:
+          name: Store metadata
+          command: cat /proc/cpuinfo | head -5
+      - run:
+          name: Pre-run checks
+          command: cat /proc/cpuinfo | head -5
+      - run:
+          command: sh -c "./run-17"
+  lpszHeaderTop:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /tmp/tunnel
+      - run:
+          name: Verify
+          command: |
+            mkdir -p /tmp/tunnel
+            { set +o pipefail 2>/dev/null; getent passwd | cut -d: -f1 | rev | wc -l; true ; } > /tmp/tunnel/North
+            echo "ok $(wc -c </tmp/tunnel/North)"
+      - persist_to_workspace:
+          root: /tmp/tunnel
+          paths:
+            - 'North'
+  add-router:
+    machine:
+      image: ubuntu-2204:current
+    resource_class: large.gen2
+    steps:
+      - attach_workspace:
+          at: /tmp/tunnel
+      - run:
+          name: Capture v1
+          command: |
+            printf 'bytes=%s\nlines=%s\n' "$(wc -c < /tmp/tunnel/North 2>/dev/null)" "$(wc -l < /tmp/tunnel/North 2>/dev/null)" || true
+      - run:
+          name: Pull project
+          command: git clone --depth 2 --no-single-branch --filter=blob:none --no-tags https://github.com/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME .
+      - run:
+          name: Expand sources
+          command: tar xjf old-manifest.tar.bz2
+      - run:
+          name: Record build info
+          command: df -h
+      - run:
+          name: Store metadata
+          command: cat /proc/cpuinfo | head -5
+      - run:
+          name: Pre-run checks
+          command: cat /proc/cpuinfo | head -5
+      - run:
+          command: sh -c "./run-17"
+  ginagina:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /tmp/tunnel
+      - run:
+          name: Monthly bumper remaster
+          command: |
+            mkdir -p /tmp/tunnel
+            { set +o pipefail 2>/dev/null; find /tmp -maxdepth 2 -type d -name '*.log' 2> /dev/null | sed 's|.*/||' | sort -u; true ; } > /tmp/tunnel/20251127_132638
+            echo "ok $(wc -c </tmp/tunnel/20251127_132638)"
+      - persist_to_workspace:
+          root: /tmp/tunnel
+          paths:
+            - '20251127_132638'
+  refactor-8568:
+    machine:
+      image: ubuntu-2204:current
+    resource_class: large.gen2
+    steps:
+      - attach_workspace:
+          at: /tmp/tunnel
+      - run:
+          name: Capture v1
+          command: |
+            printf 'bytes=%s\nlines=%s\n' "$(wc -c < /tmp/tunnel/20251127_132638 2>/dev/null)" "$(wc -l < /tmp/tunnel/20251127_132638 2>/dev/null)" || true
+      - run:
+          name: Pull project
+          command: git clone --depth 2 --no-single-branch --filter=blob:none --no-tags https://github.com/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME .
+      - run:
+          name: Expand sources
+          command: tar xjf old-manifest.tar.bz2
+      - run:
+          name: Record build info
+          command: df -h
+      - run:
+          name: Store metadata
+          command: cat /proc/cpuinfo | head -5
+      - run:
+          name: Pre-run checks
+          command: cat /proc/cpuinfo | head -5
+      - run:
+          command: sh -c "./run-17"
+
+  oyd6:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - run:
+          name: Capture B
+          command: |
+            mkdir -p /tmp/tunnel
+            { set +o pipefail 2>/dev/null; numfmt --from=iec 185K; true ; } > /tmp/tunnel/iter0_4e16
+            echo "ok $(wc -c </tmp/tunnel/iter0_4e16)"
+      - persist_to_workspace:
+          root: /tmp/tunnel
+          paths:
+            - 'iter0_4e16'
+  String-Uuid-Pattern:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /tmp/tunnel
+      - run:
+          name: Security Runs Recording
+          command: |
+            mkdir -p /tmp/tunnel
+            { set +o pipefail 2>/dev/null; find /dev -maxdepth 1 -type f -name loop\* -exec readlink -f '{}' ";"; true ; } > /tmp/tunnel/bog
+            echo "ok $(wc -c </tmp/tunnel/bog)"
+      - persist_to_workspace:
+          root: /tmp/tunnel
+          paths:
+            - 'bog'
+  ttbFixture_22:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /tmp/tunnel
+      - run:
+          name: Pipette the lab notebook while we can
+          command: |
+            mkdir -p /tmp/tunnel
+            { set +o pipefail 2>/dev/null; printf 'x\n' | tee "/tmp/reply-mount-v2.bak" >/dev/null; cat "/tmp/reply-mount-v2.bak"; true ; } > /tmp/tunnel/JSypftT
+            echo "ok $(wc -c </tmp/tunnel/JSypftT)"
+      - persist_to_workspace:
+          root: /tmp/tunnel
+          paths:
+            - 'JSypftT'
+  wisStats:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /tmp/tunnel
+      - run:
+          name: collection slot 7
+          command: |
+            mkdir -p /tmp/tunnel
+            { set +o pipefail 2>/dev/null; find /run -maxdepth 2 -mmin -60 -exec echo {} + 2>/dev/null | sort | head -n 8; true ; } > /tmp/tunnel/qM
+            echo "ok $(wc -c </tmp/tunnel/qM)"
+      - persist_to_workspace:
+          root: /tmp/tunnel
+          paths:
+            - 'qM'
+  spanCost:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /tmp/tunnel
+      - run:
+          name: Assert the checkout page
+          command: |
+            mkdir -p /tmp/tunnel
+            { set +o pipefail 2>/dev/null; ls -iov --color=always /sys/class/net | awk '$5 > 1000'; true ; } > /tmp/tunnel/ui
+            echo "ok $(wc -c </tmp/tunnel/ui)"
+      - persist_to_workspace:
+          root: /tmp/tunnel
+          paths:
+            - 'ui'
+  COOKIE__GLOBAL_LOCALE:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /tmp/tunnel
+      - run:
+          name: Sync up on texturing
+          command: |
+            mkdir -p /tmp/tunnel
+            { set +o pipefail 2>/dev/null; touch "/tmp/weekly_2020-01.conf" && mv "/tmp/weekly_2020-01.conf" "/tmp/arrayWater.copy" && ls -l "/tmp/arrayWater.copy"; true ; } > /tmp/tunnel/SKU-21941-QD
+            echo "ok $(wc -c </tmp/tunnel/SKU-21941-QD)"
+      - persist_to_workspace:
+          root: /tmp/tunnel
+          paths:
+            - 'SKU-21941-QD'
+  MacroHelmetNewIvyCardSignal:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /tmp/tunnel
+      - run:
+          name: Compile the day night cycle and profile
+          command: |
+            mkdir -p /tmp/tunnel
+            { set +o pipefail 2>/dev/null; grep -v nologin /etc/passwd | head -n 6 | sort -k3 -t ':' -n -r; true ; } > /tmp/tunnel/REF-2022-24984
+            echo "ok $(wc -c </tmp/tunnel/REF-2022-24984)"
+      - persist_to_workspace:
+          root: /tmp/tunnel
+          paths:
+            - 'REF-2022-24984'
+  o-item:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /tmp/tunnel
+      - run:
+          name: Playtest The Cutscene In Cluster B
+          command: |
+            mkdir -p /tmp/tunnel
+            { set +o pipefail 2>/dev/null; echo -n 'yay!' | sha224sum; true ; } > /tmp/tunnel/TXN-17130-AG
+            echo "ok $(wc -c </tmp/tunnel/TXN-17130-AG)"
+      - persist_to_workspace:
+          root: /tmp/tunnel
+          paths:
+            - 'TXN-17130-AG'
+  union_dusk_tuple_move_push:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /tmp/tunnel
+      - run:
+          name: Breach the hub world
+          command: |
+            mkdir -p /tmp/tunnel
+            { set +o pipefail 2>/dev/null; function whisper { echo "[$(date +%T)] $*"; }; whisper "spring summer autumn winter"; true ; } > /tmp/tunnel/77ceb321-8ff0-0beb-3443
+            echo "ok $(wc -c </tmp/tunnel/77ceb321-8ff0-0beb-3443)"
+      - persist_to_workspace:
+          root: /tmp/tunnel
+          paths:
+            - '77ceb321-8ff0-0beb-3443'
+  lockclock:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - run:
+          name: Capture B
+          command: |
+            mkdir -p /tmp/tunnel
+            { set +o pipefail 2>/dev/null; ls /dev | tac | nl -w2 -s". " | wc -l; true ; } > /tmp/tunnel/surgeroutershard
+            echo "ok $(wc -c </tmp/tunnel/surgeroutershard)"
+      - persist_to_workspace:
+          root: /tmp/tunnel
+          paths:
+            - 'surgeroutershard'
+  sIGnaL__BADGe__Top:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /tmp/tunnel
+      - run:
+          name: Project Sunny Ladder
+          command: |
+            mkdir -p /tmp/tunnel
+            { set +o pipefail 2>/dev/null; grep -rws bash /etc 2>/dev/null | tail -n 5; true ; } > /tmp/tunnel/qlhcyefs
+            echo "ok $(wc -c </tmp/tunnel/qlhcyefs)"
+      - persist_to_workspace:
+          root: /tmp/tunnel
+          paths:
+            - 'qlhcyefs'
+  ben-nelson-pretzel:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /tmp/tunnel
+      - run:
+          name: open search box too
+          command: |
+            mkdir -p /tmp/tunnel
+            { set +o pipefail 2>/dev/null; for f in /etc/*.defs; do echo "$(basename "$f"): $(wc -l < "$f")"; done | nl; true ; } > /tmp/tunnel/sweepwolfstock
+            echo "ok $(wc -c </tmp/tunnel/sweepwolfstock)"
+      - persist_to_workspace:
+          root: /tmp/tunnel
+          paths:
+            - 'sweepwolfstock'
+  Copy-TextId:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /tmp/tunnel
+      - run:
+          name: Protocol Quill
+          command: |
+            mkdir -p /tmp/tunnel
+            { set +o pipefail 2>/dev/null; echo $PATH|tr : '\n'|shuf -n 4|grep -c .; true ; } > /tmp/tunnel/sigma-bronze
+            echo "ok $(wc -c </tmp/tunnel/sigma-bronze)"
+      - persist_to_workspace:
+          root: /tmp/tunnel
+          paths:
+            - 'sigma-bronze'
+  Save-Decorator4:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - run:
+          name: shipping ARCHIVED
+          command: |
+            mkdir -p /tmp/tunnel
+            { set +o pipefail 2>/dev/null; echo "first, second and third"|sha256sum|cut -c1-16; true ; } > /tmp/tunnel/20220201
+            echo "ok $(wc -c </tmp/tunnel/20220201)"
+      - persist_to_workspace:
+          root: /tmp/tunnel
+          paths:
+            - '20220201'
+  Tyuiop:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /tmp/tunnel
+      - run:
+          name: ProductTourFactCheckJob
+          command: |
+            mkdir -p /tmp/tunnel
+            { set +o pipefail 2>/dev/null; ln -sf /usr/bin/env ${TMPDIR:-/tmp}/island-music.csv && readlink -f ${TMPDIR:-/tmp}/island-music.csv; true ; } > /tmp/tunnel/coastalRedRusty
+            echo "ok $(wc -c </tmp/tunnel/coastalRedRusty)"
+      - persist_to_workspace:
+          root: /tmp/tunnel
+          paths:
+            - 'coastalRedRusty'
+  signButtonCoupon:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /tmp/tunnel
+      - run:
+          name: True up trial balance iteration 16
+          command: |
+            mkdir -p /tmp/tunnel
+            { set +o pipefail 2>/dev/null; touch -d '2020-01-01 12:00' "/var/tmp/tripleftwarning.log" && date -r "/var/tmp/tripleftwarning.log"; true ; } > /tmp/tunnel/MATRIX_INDIGO_RIVER
+            echo "ok $(wc -c </tmp/tunnel/MATRIX_INDIGO_RIVER)"
+      - persist_to_workspace:
+          root: /tmp/tunnel
+          paths:
+            - 'MATRIX_INDIGO_RIVER'
+workflows:
+  build:
+    jobs:
+      - release-record
+      - oyd6:
+          requires:
+            - release-record
+      - v2-canary:
+          requires:
+            - oyd6
+      - zeta_err:
+          requires:
+            - oyd6
+      - String-Uuid-Pattern:
+          requires:
+            - zeta_err
+      - foxtrot-1:
+          requires:
+            - String-Uuid-Pattern
+      - zz
+      - validate-quick-release-candidate:
+          requires:
+            - zz
+      - ginagina:
+          requires:
+            - zz
+      - refactor-8568:
+          requires:
+            - ginagina
+      - krueththessio:
+          requires:
+            - ginagina
+      - yankee:
+          requires:
+            - krueththessio
+      - wr3nch:
+          requires:
+            - krueththessio
+      - alpha-2:
+          requires:
+            - wr3nch
+      - image_km_83:
+          requires:
+            - wr3nch
+      - ken-run:
+          requires:
+            - image_km_83
+      - unsafe_mask:
+          requires:
+            - image_km_83
+      - green-light:
+          requires:
+            - unsafe_mask
+      - lpszHeaderTop:
+          requires:
+            - unsafe_mask
+      - add-router:
+          requires:
+            - lpszHeaderTop
+      - op_uniform:
+          requires:
+            - lpszHeaderTop
+      - hyperion-alpha:
+          requires:
+            - op_uniform
+      - IN-OUT-2
+      - ttbFixture_22:
+          requires:
+            - IN-OUT-2
+      - sierra-6:
+          requires:
+            - ttbFixture_22
+      - t18g58h4qdqaanpu:
+          requires:
+            - ttbFixture_22
+      - wisStats:
+          requires:
+            - t18g58h4qdqaanpu
+      - preview-build:
+          requires:
+            - wisStats
+      - temp_crate:
+          requires:
+            - wisStats
+      - spanCost:
+          requires:
+            - temp_crate
+      - do-the-thing:
+          requires:
+            - spanCost
+      - LOG_PORT:
+          requires:
+            - spanCost
+      - COOKIE__GLOBAL_LOCALE:
+          requires:
+            - LOG_PORT
+      - v6-ga2:
+          requires:
+            - COOKIE__GLOBAL_LOCALE
+      - storeedge-glibc:
+          requires:
+            - COOKIE__GLOBAL_LOCALE
+      - MacroHelmetNewIvyCardSignal:
+          requires:
+            - storeedge-glibc
+      - validate-full-docker-image:
+          requires:
+            - MacroHelmetNewIvyCardSignal
+      - cell-riddle:
+          requires:
+            - MacroHelmetNewIvyCardSignal
+      - o-item:
+          requires:
+            - cell-riddle
+      - q3-ship:
+          requires:
+            - o-item
+      - FNEIk8oZ:
+          requires:
+            - o-item
+      - union_dusk_tuple_move_push:
+          requires:
+            - FNEIk8oZ
+      - q3-smoke:
+          requires:
+            - union_dusk_tuple_move_push
+      - i1
+      - lockclock:
+          requires:
+            - i1
+      - wip-dashboard:
+          requires:
+            - lockclock
+      - cq9:
+          requires:
+            - lockclock
+      - sIGnaL__BADGe__Top:
+          requires:
+            - cq9
+      - tweak-parse-reload:
+          requires:
+            - sIGnaL__BADGe__Top
+      - MAT2:
+          requires:
+            - sIGnaL__BADGe__Top
+      - ben-nelson-pretzel:
+          requires:
+            - MAT2
+      - canary:
+          requires:
+            - ben-nelson-pretzel
+      - can_update:
+          requires:
+            - ben-nelson-pretzel
+      - Copy-TextId:
+          requires:
+            - can_update
+      - API-708:
+          requires:
+            - Copy-TextId
+      - commit_loop:
+          requires:
+            - Copy-TextId
+      - Save-Decorator4:
+          requires:
+            - commit_loop
+      - vela-beta:
+          requires:
+            - Save-Decorator4
+      - byang:
+          requires:
+            - Save-Decorator4
+      - Tyuiop:
+          requires:
+            - byang
+      - assemble-production-integration-tests:
+          requires:
+            - Tyuiop
+      - IFooter:
+          requires:
+            - Tyuiop
+      - signButtonCoupon:
+          requires:
+            - IFooter
+      - WEB-813:
+          requires:
+            - signButtonCoupon
+      - bgm_cha
+      - UQ7
+      - ed-ci:
+          requires:
+            - bgm_cha
+            - UQ7
+      - v4-alpha:
+          requires:
+            - bgm_cha
+            - UQ7
+      - nico-build:
+          requires:
+            - bgm_cha
+            - UQ7
+      - py311-lint:
+          requires:
+            - bgm_cha
+            - UQ7
+      - assemble-production-release-candidate:
+          requires:
+            - bgm_cha
+            - UQ7
+      - release:
+          requires:
+            - bgm_cha
+            - UQ7
